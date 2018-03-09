@@ -1,18 +1,23 @@
 defmodule Physics.Rocketry do
   import Converter
 
+  @moon %{mass: 7.35e22, radius: 1.738e6}
+  @mars %{mass: 6.39e23, radius: 3.4e6}
+  @earth %{mass: 5.972e24, radius: 6.371e6}
+  @newtons_constant 6.67e-11
+
   def escape_velocity(:earth) do
-    %{mass: 5.972e24, radius: 6.371e6}
+    @earth
       |> escape_velocity
   end
 
   def escape_velocity(:moon) do
-    %{mass: 7.35e22, radius: 1.738e6}
+    @moon
       |> escape_velocity
   end
 
   def escape_velocity(:mars) do
-    %{mass: 6.39e23, radius: 3.4e6}
+    @mars
       |> escape_velocity
   end
 
