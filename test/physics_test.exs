@@ -2,6 +2,11 @@ defmodule PhysicsTest do
   use ExUnit.Case
   doctest Physics
 
+  test "standing on solid ground?" do
+    test = 1+1
+    assert (test == 2)
+  end
+
   test "greets the world" do
     assert Physics.hello() == :world
   end
