@@ -15,12 +15,13 @@ defmodule Converter do
   def round_up(val) when is_float(val), do: trunc(val)
 
   def to_light_seconds({unit, val}, precision: precision) do
-    case unit do
+    lights_seonds = case unit do
       :miles -> from_miles(val)
       :meters -> from_meters(val)
       :feet -> from_feet(val)
       :inches -> from_inches(val)
-    end |> round_to(precision) # example 1
+    end
+    lights_seonds |> round_to(precision)
   end
 
   defp from_miles(val), do: val * 5.36819e-6
