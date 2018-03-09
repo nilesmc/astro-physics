@@ -11,15 +11,35 @@ defmodule PhysicsTest do
     assert Physics.hello() == :world
   end
 
-  test "escape velocity of earth is correct" do
-    ev = Physics.Rocketry.escape_velocity(:earth) #|> IO.inspect
+  test "escape velocity of Earth is correct" do
+    ev = Physics.Rocketry.escape_velocity(:earth)
     assert ev == 11.2
   end
 
   test "escape velocity of planet X is correct" do
     planet_x = %{mass: 4.0e22, radius: 6.21e6}
-    ev =  planet_x |> Physics.Rocketry.escape_velocity #|> IO.inspect
-    assert ev == 1.0
+    ev =  planet_x |> Physics.Rocketry.escape_velocity
+    assert ev == 0.9
+  end
+
+  test "escape velocity of Mars is correct" do
+    ev = Physics.Rocketry.escape_velocity(:mars)
+    assert ev == 5.0
+  end
+
+  test "escape velocity of moon is correct" do
+    ev = Physics.Rocketry.escape_velocity(:moon)
+    assert ev == 2.4
+  end
+
+  test "Converter works" do
+    ls = Converter.to_light_seconds({:miles, 1000}, precision: 4) #|> IO.inspect
+    assert ls == 0.0054
+  end
+
+  test "Converter works with default values" do
+    ls = Converter.to_light_seconds({:miles, 1000}) #|> IO.inspect
+    assert ls == 0.00537
   end
 
 end
