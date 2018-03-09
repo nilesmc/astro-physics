@@ -19,7 +19,7 @@ defmodule PhysicsTest do
   test "escape velocity of planet X is correct" do
     planet_x = %{mass: 4.0e22, radius: 6.21e6}
     ev =  planet_x |> Physics.Rocketry.escape_velocity #|> IO.inspect
-    assert ev == 0.9
+    assert ev == 1.0
   end
 
 end
