@@ -38,8 +38,18 @@ defmodule PhysicsTest do
   end
 
   test "Converter works with default values" do
-    ls = Converter.to_light_seconds({:miles, 1000}) #|> IO.inspect
+    ls = Converter.to_light_seconds({:miles, 1000})
     assert ls == 0.00537
   end
+
+  # test "Orbital acceleration for earth at 100km" do
+  #   orbital_acc = Physics.Rocketry.orbital_acceleration(100)
+  #   assert orbital_acc == 9.515619587729839
+  # end
+
+  # test "Orbital term for 100km above earth" do
+  #   term = Physics.Rocketry.orbital_term(100)
+  #   assert (term > 4) && (term < 5)
+  # end
 
 end

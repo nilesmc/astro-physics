@@ -18,6 +18,7 @@ defmodule Converter do
 
   def round_up(val) when is_float(val), do: trunc(val)
 
+  def to_light_seconds(arg), do: to_light_seconds(arg, precision: 5)
   def to_light_seconds({:miles, miles} = val, precision: precision) when is_integer(miles) or is_float(miles) do
     (miles * 5.36819e-6) |> round_to(precision)
   end
